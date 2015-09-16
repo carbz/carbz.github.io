@@ -1,270 +1,528 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/favicons/favicon.ico?1433351362" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-    <title>CartoDB · KEDCO - Electrification Roadmap</title>
-    <meta name="description" content="KEDCO - Electrification Roadmap created by topol in CartoDB">
+    <link href="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/favicons/favicon.ico?1433351362" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <title>KEDCO - Electrification Roadmap</title>
+    <meta name="description" content="Map created by SEL Columbia in CartoDB">
     <meta name="keywords" content="KEDCO, -, Electrification, Roadmap, datasets, maps, data visualization, spatial data, geospatial, cartodb">
     <meta name="author" content="topol">
     <meta charset='utf-8' />
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 
-    <meta property="og:title" content="CartoDB · KEDCO - Electrification Roadmap" />
-    <meta property="og:description" content="KEDCO - Electrification Roadmap created by topol in CartoDB" />
-    <meta property="og:type" content="visualization" />
-    <meta property="og:url" content="https://topol.cartodb.com/viz/583a9cd0-0122-11e5-83f0-0e018d66dc29/embed_map" />
-    <meta property="og:image" content="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/images/layout/cartofante_blue.png" />
-
-    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="KEDCO - Electrification Roadmap" />
+    <meta property="og:site_name" content="CartoDB" />
+    <meta property="og:description" content="Map created by SEL Columbia in CartoDB" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://topol.cartodb.com/viz/583a9cd0-0122-11e5-83f0-0e018d66dc29/public_map" />
+    <meta property="og:image" content="http://topol.cartodb.com:80/api/v1/map/static/named/tpl_583a9cd0_0122_11e5_83f0_0e018d66dc29/1200/630.png">
+      <meta property="fb:app_id" content="204330262947622" />
+      <meta property="fb:admins" content="500593636634213" />
+    <meta property="article:publisher" content="https://www.facebook.com/cartodb" />
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@cartodb">
-    <meta name="twitter:creator" content="@cartodb">
-    <meta name="twitter:title" content="CartoDB · KEDCO - Electrification Roadmap">
-    <meta name="twitter:description" content="KEDCO - Electrification Roadmap created by topol in CartoDB">
-    <meta name="twitter:image" content="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/images/layout/cartofante_blue.png">
-    <meta name="twitter:url" content="https://topol.cartodb.com/viz/583a9cd0-0122-11e5-83f0-0e018d66dc29/embed_map" />
+      <meta name="twitter:creator" "@#{@twitter_username}" ">
+    <meta name="twitter:title" content="KEDCO - Electrification Roadmap">
+    <meta name="twitter:description" content="Map created by SEL Columbia in CartoDB">
+    <meta name="twitter:image" content="http://topol.cartodb.com:80/api/v1/map/static/named/tpl_583a9cd0_0122_11e5_83f0_0e018d66dc29/560/300.png">
 
     
-  <style type="text/css">
-  html, body, #map {height: 100%; padding: 0; margin: 0;}
-  /* footer */
-  .cartodb-text {position:absolute; display:none; bottom:0; left:0; right:0; margin:0; padding:0 10px; background:white; font:normal 11px "Helvetica",Arial; color:#999999; border-top:1px solid #CCC; border-top:1px solid rgba(0,0,0,0); box-shadow:rgba(0,0,0,0.6) 0 0 1px 0; -webkit-box-shadow:rgba(0,0,0,0.6) 0 0 1px 0; -moz-box-shadow:rgba(0,0,0,0.6) 0 0 1px 0; -o-box-shadow:rgba(0,0,0,0.6) 0 0 1px 0; line-height:29px; z-index:2; }
-  .cartodb-text a {color:#397DB8; text-decoration:underline;}
-  .cartodb-text a.user { text-decoration:none }
-  .cartodb-text img {display:inline-block; *display:inline; vertical-align:middle; border-radius:16px; -webkit-border-radius:16px; -moz-border-radius:16px; zoom:1; text-decoration:none }
-  .cartodb-text span.username { text-decoration:underline }
-  /* likes */
-  .cartodb-text .like { float: right; display:inline-block; *display:inline; vertical-align:middle; zoom:1; text-decoration: none; color: #666; }
-  .cartodb-text .like .icon { display:inline-block; *display:inline; vertical-align:middle; zoom:1; position:relative; top: -1px; width: 14px; height: 14px; background-image:url('//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/images/layout/heart.png'); background-size: 14px 14px; -webkit-transform: scale(.7); -ms-transform: scale(.7); transform: scale(.7);  }
-  .cartodb-text .like.is-highlighted .icon { background-image:url('//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/images/layout/heart_highlighted.png'); background-size: 14px 14px; -webkit-transform: scale(.7); -ms-transform: scale(.7); transform: scale(.7); }
-  .cartodb-text .like .icon.is-animated { -ms-animation-duration: 400ms; -webkit-animation-duration: 400ms; animation-duration: 400ms; -webkit-animation-fill-mode: both; -ms-animation-fill-mode: both; animation-fill-mode: both; animation-timing-function: ease-in; -webkit-animation-timing-function: ease-in; } 
-  @-webkit-keyframes pulse { 0% { -webkit-transform: scale(.7); -ms-transform: scale(.7); transform: scale(.7); } 25% { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); } 50% { -webkit-transform: scale(.5); -ms-transform: scale(.5); transform: scale(.5); } 75% { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); } 100% { -webkit-transform: scale(.7); -ms-transform: scale(.7); transform: scale(.7); } }
-  @keyframes pulse { 0% { -webkit-transform: scale(.7); -ms-transform: scale(.7); transform: scale(.7); } 25% { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); } 50% { -webkit-transform: scale(.5); -ms-transform: scale(.5); transform: scale(.5); } 75% { -webkit-transform: scale(1); -ms-transform: scale(1); transform: scale(1); } 100% { -webkit-transform: scale(.7); -ms-transform: scale(.7); transform: scale(.7); } }
-  .cartodb-text .like .icon.is-pulsating { -webkit-animation-name: pulse; -ms-animation-name: pulse; animation-name: pulse; }
-
-  /* not supported dialog */ 
-  #not_supported_dialog {position:absolute; width:356px; height:213px; top:50%; left:50%; margin-top:-107px; margin-left:-178px; padding:0; background-color:#FFF; text-align:center; font-family:'Helvetica', Arial; color:#666666; z-index:10000;}
-  #not_supported_dialog h2 {display:inline-block; width:77px; margin:30px 0 0; padding-bottom:16px; font-size:13px; font-weight:bold; border-bottom:1px solid #D9D9D9; vertical-align:top; zoom:1; *display:inline;}
-  #not_supported_dialog p {display:block; padding:0 40px; margin:12px 0 0; font-size:15px;}
-  #not_supported_dialog ul {position:absolute; bottom:0; left:0; right:0; display:block; margin:0; padding:0; list-style:none; border-top:1px solid #D9D9D9;}
-  #not_supported_dialog ul li {float:left; margin:0; padding:0; border-right:1px solid #D9D9D9;}
-  #not_supported_dialog ul li a {display:block; width:118px; height:74px; background-repeat:no-repeat; background-position:center center; font-size:0; line-height:0; text-indent:-9999px;}
-  #not_supported_dialog ul li.last {border:none;}
-  #not_supported_dialog a.safari {background-image:url('//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/images/layout/safari.png');}
-  #not_supported_dialog a.chrome {background-image:url('//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/images/layout/chrome.png');}
-  #not_supported_dialog a.firefox {background-image:url('//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/images/layout/firefox.png');}
-
-
-  :-webkit-full-screen .cartodb-map-wrapper { height: 100%!important; }
-  :-moz-full-screen .cartodb-map-wrapper { height: 100%!important; }
-  :-ms-fullscreen .cartodb-map-wrapper { height: 100%!important; }
-  :fullscreen .cartodb-map-wrapper { height: 100%!important; }
-
-
-</style>
-
-<link href="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/stylesheets/cartodb.css" media="screen" rel="stylesheet" type="text/css" />
-
+  <link href="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/stylesheets/cartodb.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/stylesheets/common.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/stylesheets/public_map.css" media="screen" rel="stylesheet" type="text/css" />
 
 
     <!--[if lt IE 9]>
-      <script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/javascripts/modernizr.js" type="text/javascript"></script>
+      <script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/javascripts/modernizr.js" type="text/javascript"></script>
     <![endif]-->
   </head>
-  <body class="
-  embed-map
-">
+  <body class=" PublicMap ">
     
-    <div id="map"></div>
+    <div class="Header" id="header">
+  <div class="u-inner Header-inner">
+    <div class="Header-navigation">
+      <ul class="Header-navigationList">
+        <li class="js-logo">
+          <a href="http://cartodb.com">
+            <span class="Logo Logo--avatar">
+              <i class="iconFont iconFont-CartoFante"></i>
+            </span>
+          </a>
+        </li>
 
-    <div id="not_supported_dialog" style="display: none">
-      <h2>CartoDB</h2>
-      <p>This visualization only works in modern browsers. Upgrade yours and enjoy.</p>
-      <ul>
-        <li><a href="http://www.apple.com/safari/" class="safari">Safari</a></li>
-        <li><a href="https://www.google.com/chrome/" class="chrome">Chrome</a></li>
-        <li class="last"><a href="http://www.mozilla.org/en-US/firefox/all/‎" class="firefox">Firefox</a></li>
+          <li class="Header-navigationItem js-user-tour u-hideOnTablet">
+            <a href="http://cartodb.com" class="Header-navigationLink js-dropdown-target">Tour <i class="Header-darrow iconFont iconFont-ArrowMenu"></i></a>
+          </li>
+
+          <li class="Header-navigationItem js-user-industries u-hideOnTablet">
+            <a href="#/industries" class="Header-navigationLink js-dropdown-target">Industries <i class="Header-darrow iconFont iconFont-ArrowMenu"></i></a>
+          </li>
+
+          <li class="Header-navigationItem u-hideOnTablet">
+            <a href="http://cartodb.com/gallery/" class="Header-navigationLink">Gallery</a>
+          </li>
+
+          <li class="Header-navigationItem u-hideOnTablet">
+            <a href="http://cartodb.com/pricing/" class="Header-navigationLink">Pricing</a>
+          </li>
+
+          <li class="Header-navigationItem js-user-resources u-hideOnTablet">
+            <a href="#/resources" class="Header-navigationLink js-dropdown-target">Resources <i class="Header-darrow iconFont iconFont-ArrowMenu"></i></a>
+          </li>
       </ul>
     </div>
 
-    <div class="cartodb-text">
-      Map created by
-      <a class="user" href="https://topol.cartodb.com/maps?utm_source=Footer_Link&utm_medium=referral&utm_campaign=Embed_v1&utm_content=topol" target="_blank">
-          <img src="https://s3.amazonaws.com/com.cartodb.users-assets.production/production/topol/assets/20150523080258NPLogo-resized.png" width="16" height="16" alt="SEL Columbia" title="SEL Columbia" />
-        <span class="username">SEL Columbia</span>
-      </a>
+    <div class="Header-settings">
+      <ul class="Header-settingsList js-user-settings">
+        <li class="Header-settingsItem js-login">
+          <a href="https://topol.cartodb.com/login" class="Header-settingsLink">Login</a>
+        </li>
 
-      <a href="#like" class="like js-like">
-        <span class="icon"></span>
-        <span class="counter">0</span>
-      </a>
+          <li class="Header-settingsItem">
+            <a href="http://cartodb.com/signup" class="Button Button--headerPositive">
+              <span>Sign up</span>
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+    <div class="PublicMap-map js-map" id="map">
+      <div class="Spinner Spinner--center js-spinner"></div>
+    </div>
+
+    <div class="NotSupportedDialog" id="not_supported_dialog" style="display: none">
+      <h2 class="NotSupportedDialog-title">CartoDB</h2>
+      <p class="NotSupportedDialog-desc">This visualization only works in modern browsers. Upgrade yours and enjoy.</p>
+      <ul class="NotSupportedDialog-list">
+        <li class="NotSupportedDialog-item"><a class="NotSupportedDialog-itemLink NotSupportedDialog-itemLink--Safari" href="http://www.apple.com/safari/" class="safari">Safari</a></li>
+        <li class="NotSupportedDialog-item"><a class="NotSupportedDialog-itemLink NotSupportedDialog-itemLink--Chrome" href="https://www.google.com/chrome/" class="chrome">Chrome</a></li>
+        <li class="NotSupportedDialog-item is-last"><a class="NotSupportedDialog-itemLink NotSupportedDialog-itemLink--Firefox" href="http://www.mozilla.org/en-US/firefox/all/‎" class="firefox">Firefox</a></li>
+      </ul>
+    </div>
+
+    <div class="Navmenu js-Navmenu">
+      <div class="u-inner">
+        <div class="PublicMap-block">
+          <div class="PublicMap-gradient"></div>
+
+          <div class="PublicMap-leftBlock PublicMap-leftBlock--owner">
+            <ul class="Navmenu-list Navmenu-list--owner Navmenu-list--avatar">
+              <li class="Navmenu-item">
+                <a href="https://topol.cartodb.com/maps" target="_blank" class="UserAvatar">
+                  <img class="UserAvatar-img--medium" src="https://s3.amazonaws.com/com.cartodb.users-assets.production/production/topol/assets/20150814172815SEL_logo.png" alt="SEL Columbia" title="SEL Columbia" />
+                </a>
+              </li>
+            </ul>
+
+            <ul class="Navmenu-list Navmenu-list--owner">
+              <li class="Navmenu-item last-child">
+                <a href="https://topol.cartodb.com/maps" class="Navmenu-link Navmenu-link--owner">SEL Columbia</a>
+              </li>
+
+              <li class="Navmenu-item u-hideOnTablet">
+                <i class="Navmenu-rarrow iconFont iconFont-Rarrow"></i>
+                <a href="https://topol.cartodb.com/maps" class="Navmenu-link">Maps</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="PublicMap-rightBlock PublicMap-rightBlock--owner u-txt-right">
+            <ul class="Navmenu-list">
+              <li class="Navmenu-item Navmenu-item--buttons">
+                <ul class="u-valign">
+                  <li class="Navmenu-subItem">
+                    <a href="https://topol.cartodb.com/viz/583a9cd0-0122-11e5-83f0-0e018d66dc29/embed_map" target="_blank" class="Navmenu-link">
+                      <i class="iconFont iconFont-Fullscreen Navmenu-icon"></i>
+                    </a>
+                  </li>
+
+                  <li class="Navmenu-subItem">
+                    <a href="https://topol.cartodb.com/api/v1/viz/583a9cd0-0122-11e5-83f0-0e018d66dc29/like" class="Navmenu-link js-likes"
+                      data-vis-id="583a9cd0-0122-11e5-83f0-0e018d66dc29"
+                      data-likes-count="0"
+                      data-likes-size="big">
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="Navmenu-item Navmenu-item--buttons js-Navmenu-share u-showOnTablet">
+                <div class="Navmenu-sep u-showOnTablet"></div>
+
+                <a href="#" class="Navmenu-link Navmenu-shareLink js-Navmenu-shareLink">
+                  <i class="iconFont iconFont-Share Navmenu-icon"></i>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="Navmenu-list Navmenu-shareList js-Navmenu-shareList u-valign">
+              <li class="Navmenu-item Navmenu-item--buttons">
+                <div class="Navmenu-sep u-hideOnTablet"></div>
+
+                <ul class="u-valign">
+                  <li class="Navmenu-subItem"> 
+                    <a href="https://twitter.com/intent/tweet?text=KEDCO%20-%20Electrification%20Roadmap&url=https%3A%2F%2Ftopol.cartodb.com%2Fviz%2F583a9cd0-0122-11e5-83f0-0e018d66dc29%2Fpublic_map&via=cartoDB">
+                      <i class="iconFont iconFont-Twitter Navmenu-icon Navmenu-icon--twitter"></i>
+                    </a>
+                  </li>
+
+                  <li class="Navmenu-subItem">
+                    <a href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Ftopol.cartodb.com%2Fviz%2F583a9cd0-0122-11e5-83f0-0e018d66dc29%2Fpublic_map" target="_blank" class="Navmenu-link js-Navmenu-link--facebook">
+                      <i class="iconFont iconFont-FacebookSquare Navmenu-icon"></i>
+                    </a>
+                  </li>
+
+                  <li class="Navmenu-subItem">
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Ftopol.cartodb.com%2Fviz%2F583a9cd0-0122-11e5-83f0-0e018d66dc29%2Fpublic_map&title=KEDCO%20-%20Electrification%20Roadmap&summary=Map%20created%20by%20SEL%20Columbia%20in%20CartoDB&source=CartoDB" target="_blank" class="Navmenu-link js-Navmenu-link--linkedin">
+                      <i class="iconFont iconFont-Linkedin Navmenu-icon"></i>
+                    </a>
+                  </li>
+
+                  <li class="Navmenu-subItem u-showOnTablet">
+                    <button class="ImportItem-closeButton Navmenu-link js-Navmenu-closeLink Navmenu-closeLink">
+                      <i class="iconFont iconFont-Close ImportItem-closeButtonIcon"></i>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="Navmenu-list u-hideOnTablet">
+              <li class="Navmenu-item">
+                <a class="Button Button--main Navmenu-editLink Navmenu-editLink--edit js-Navmenu-editLink" href="https://topol.cartodb.com/viz/583a9cd0-0122-11e5-83f0-0e018d66dc29">Edit in cartodb</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="PublicMap-secondary">
+      <div class="u-inner">
+        <div class="PublicMap-block">
+          <div class="PublicMap-leftBlock PublicMap-leftBlock--large">
+            <div class="js-user-meta">
+              <h1 class="PublicMap-title js-PublicMap-title Title Title--m">KEDCO - Electrification Roadmap</h1>
+
+              <div class="PublicMap-meta">
+                <ul class="PublicMap-metaList">
+                  <li class="PublicMap-metaItem"><i class="PublicMap-metaIcon iconFont iconFont-Calendar"></i> less than a minute ago</li>
+                </ul>
+
+                <ul class="PublicMap-metaList PublicMap-metaList--mobile js-PublicMap-metaList--mobile">
+                  <li class="PublicMap-metaItem"><i class="PublicMap-metaIcon iconFont iconFont-Stats"></i> 136 mapviews</li>
+
+                </ul>
+              </div>
+
+              <a class="Navmenu-editLink Navmenu-editLink--more js-Navmenu-editLink--more" href="#/more">More info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="u-inner">
+        <div class="PublicMap-block with-padding">
+          <h3 class="PublicMap-secondaryTitle">Datasets in use</h3>
+        </div>
+      </div>
+
+      <div class="u-inner">
+        <div class="PublicMap-block">
+          <ul>
+
+              <li class="DatasetsList-item">
+                <div class="LayoutIcon">
+                  <i class="iconFont iconFont-Lock"></i>
+                </div>
+                <div class="DefaultTitle PublicMap-privateDatasets">4 private datasets</div>
+              </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="u-inner">
+        <div class="PublicMap-block PublicMap-info">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+            var disqus_shortname  = 'cartodb';
+            var disqus_identifier = '583a9cd0-0122-11e5-83f0-0e018d66dc29';
+
+            (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+        </div>
+      </div>
 
     </div>
 
-    
-  
-<script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/javascripts/embed.js" type="text/javascript"></script>
-<script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/javascripts/public_like.js" type="text/javascript"></script>
+      
+<footer id="Footer" class="Footer  Footer--public u-pr">
+  <div class="u-inner">
+    <div class="Footer-inner Footer-inner--public">
+      <div class="Grid">
+        <ul class="Grid-inner Footer-columns Grid-inner--nopadding">
+          <li class="Grid-cell Grid-cell--col2 Grid-cell--col4--tablet Grid-cell--col6--mobile Footer-column">
+            <dl>
+              <dt class="Footer-title">CartoDB</dt>
+              <dd><a class="Footer-link" href="https://cartodb.com/platform/">Platform</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/editor/">Editor</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/extras/">Extras</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/enterprise/">Enterprise</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/on-premises/">On-premises</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/open-in-cartodb/">Open in CartoDB</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/gallery/">Gallery</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/basemaps/">Basemaps</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/pricing/">Pricing</a></dd>
+            </dl>
+          </li>
 
+          <li class="Grid-cell Grid-cell--col2 Grid-cell--col4--tablet Grid-cell--col6--mobile Footer-column">
+            <dl>
+              <dt class="Footer-title">Industries</dt>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/banking-and-finance/">Banking and Finance</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/business-intelligence-and-analytics/">BI and Analytics</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/earth-observation-and-space/">Earth Observation and Space</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/education-and-research/">Education and Research</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/government/">Government</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/journalism/">Journalism and New Media</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/natural-resources/">Natural Resources</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/non-profits/">Non-profits</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/real-estate/">Real Estate</a></dd>
+                <dd><a class="Footer-link" href="https://cartodb.com/industries/web-mobile/">Web and Mobile Development</a></dd>
+            </dl>
+          </li>
+
+          <li class="Grid-cell Grid-cell--col2 Grid-cell--col4--tablet Grid-cell--col6--mobile Footer-column">
+            <dl>
+              <dt class="Footer-title">Solutions</dt>
+              <dd><a class="Footer-link" href="https://cartodb.com/solutions/cartodb-on-google-platform/">On Google Platform</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/solutions/twitter-maps/">Make Twitter Maps</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/use-cases/map-excel-data/">Map Excel Data</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/use-cases/situation-room/">Create Dashboards</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/use-cases/election-maps/">Map Elections</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/use-cases/build-store-locator/">Build a Store Locator</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/gis-online-software/">Make Online GIS Maps</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/solutions/satellite-aerial-image/">Satellite Imagery</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/solutions/dropbox/">CartoDB for Dropbox</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/solutions/mailchimp/">Mailchimp maps</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/solutions/google-drive/">CartoDB for GDrive</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/solutions/arcgis/">CartoDB for ArcGIS&trade;</a></dd>
+            </dl>
+          </li>
+
+          <li class="Grid-cell Grid-cell--col2 Grid-cell--col4--tablet Grid-cell--col6--mobile Footer-column">
+            <dl>
+              <dt class="Footer-title">Learn</dt>
+              <dd><a class="Footer-link" href="https://cartodb.com/docs/">Documentation</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/webinars/">Webinars</a></dd>
+              <dd><a class="Footer-link" href="http://docs.cartodb.com/tutorials.html">Tutorials</a></dd>
+              <dd><a class="Footer-link" href="http://academy.cartodb.com/">The Map Academy</a></dd>
+              <dd><a class="Footer-link" href="https://github.com/CartoDB/cartodb/">View source</a></dd>
+            </dl>
+          </li>
+
+          <li class="Grid-cell Grid-cell--col2 Grid-cell--col4--tablet Grid-cell--col6--mobile Footer-column">
+            <dl>
+              <dt class="Footer-title">Help</dt>
+              <dd><a class="Footer-link js-ContactLink" href="mailto:sales@cartodb.com">Contact Sales</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/request-live-demo/">Request a demo</a></dd>
+            </dl>
+          </li>
+
+          <li class="Grid-cell Grid-cell--col2 Grid-cell--col4--tablet Grid-cell--col6--mobile Footer-column">
+            <dl>
+              <dt class="Footer-title">About us</dt>
+              <dd><a class="Footer-link" href="https://cartodb.com/team/">Team</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/jobs/">Jobs</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/media/">Media</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/press/">Press</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/partners/">Partners</a></dd>
+              <dd><a class="Footer-link" href="https://cartodb.com/attributions/">Attributions</a></dd>
+              <dd><a class="Footer-link" href="http://blog.cartodb.com/">Blog</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+
+      <div class="Footer-colophon">
+        <div class="Grid">
+          <ul class="Grid-inner Grid-inner--vcenter Grid-inner--nopadding">
+            <li class="Grid-cell Grid-cell--col5 Grid-cell--col12--mobile u-tspace-l">
+              <a href="http://cartodb.com" class="Footer-brand u-iblock">
+                <span class="Logo Logo--avatar Logo--footer">
+                  <i class="iconFont iconFont-CartoFante"></i>
+                </span>
+              </a>
+              <p class="Footer-credits u-iblock u-txt-left"><span>CartoDB™ 2015</span><br /><a href="https://cartodb.com/love/" class="Footer-link">Love</a> · <a href="https://cartodb.com/terms" class="Footer-link">Terms of service</a> · <a href="https://cartodb.com/privacy" class="Footer-link">Privacy policy</a></p>
+            </li>
+
+            <li id="newsletter" class="Grid-cell Grid-cell--col7 Grid-cell--col12--mobile Grid">
+              <div class="Grid-inner Grid-inner--vcenter">
+                <ul class="Grid-cell Grid-cell--col6 Grid-cell--col12--mobile u-tspace-l u-ilist Social-links">
+                  <li class="Social-item"><a class="Social-link Social-link--twitter" href="https://twitter.com/cartodb"><i class="iconFont iconFont-Twitter Navmenu-icon"></i></a></li>
+                  <li class="Social-item"><a class="Social-link" href="https://www.facebook.com/CartoDB"><i class="iconFont iconFont-FacebookSquare Navmenu-icon"></i></a></li>
+                  <li class="Social-item"><a class="Social-link" href="https://www.linkedin.com/company/cartodb"><i class="iconFont iconFont-Linkedin Navmenu-icon"></i></a></li>
+                </ul>
+
+                <div class="Grid-cell Grid-cell--col6 Grid-cell--col12--mobile u-tspace-l">
+                  <div class="Newsletter">
+                    <script charset="utf-8" src="//js.hsforms.net/forms/current.js"></script>
 <script>
+  hbspt.forms.create({
+    portalId: "474999",
+    formId: "2ed2a125-0e48-4d52-a03c-a1cb90f0433b",
+    submitButtonClass: 'hs-newsletter',
+    css: "hs-form{margin-right:-20px}.hs-form fieldset{display:block;width:100%;max-width:none !important}.hs-form label{display:none !important}.hs-form .input{margin-right:20px !important;margin-bottom:20px}.hs-form .hs-input{width:100% !important;outline:none}.hs-form select.hs-input{height:35px;border:1px solid #ccc;font-size:13px;color:#666}.hs-form input.hs-input,.hs-form textarea.hs-input{border:1px solid #ddd;padding:8px;border-radius:4px;transition:all 0.3s;font:200 14px/17px Lato, sans-serif;color:#999;background:#fff}.hs-form input.hs-input:focus,.hs-form textarea.hs-input:focus{border-color:#ccc}.hs-form textarea.hs-input{height:80px}"
+ });
+</script>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  // Get url parameters
-  function get_url_params(conversion) {
-    conversion = conversion || {};
 
-    var tokens = location.search.slice(1).split('&');
-    var params = {};
+    
 
-    for (var i = 0; i < tokens.length; ++i) {
+  <script>
+    function get_url_params(conversion) {
+      conversion = conversion || {};
 
-      var tk = tokens[i].split('=');
-      var fn = conversion[tk[0]] || function(v) { return v };
+      var tokens = location.search.slice(1).split('&');
+      var params = {};
 
-      if (tk.length === 2) {
-        params[tk[0]] = fn(decodeURIComponent(tk[1]));
+      for (var i = 0; i < tokens.length; ++i) {
+
+        var tk = tokens[i].split('=');
+        var fn = conversion[tk[0]] || function(v) { return v };
+
+        if (tk.length === 2) {
+          params[tk[0]] = fn(decodeURIComponent(tk[1]));
+        }
       }
+
+      return params;
     }
 
-    return params;
-  }
+    var user_name = '';
+    var owner_username = 'topol';
+    var base_url = 'https://topol.cartodb.com';
+    var vis_id = "583a9cd0-0122-11e5-83f0-0e018d66dc29";
+    var vis_name = "KEDCO - Electrification Roadmap";
+    var belong_organization = false;
+    var config = JSON.parse('{\"maps_api_template\":\"https://{user}.cartodb.com:443\",\"user_name\":\"topol\",\"cartodb_com_hosted\":false,\"account_host\":\"cartodb.com\",\"max_asset_file_size\":1048576,\"api_key\":\"\",\"sql_api_template\":\"https://{user}.cartodb.com:443\",\"statsd_host\":\"s.cartodb.net\",\"statsd_port\":80,\"error_track_url\":\"https://viz2.cartodb.com/api/v1/sql\",\"error_track_percent_users\":10}');
+    var vizdata = JSON.parse('{\"id\":\"583a9cd0-0122-11e5-83f0-0e018d66dc29\",\"version\":\"0.1.0\",\"title\":\"KEDCO - Electrification Roadmap\",\"likes\":0,\"description\":null,\"scrollwheel\":true,\"legends\":true,\"url\":null,\"map_provider\":\"leaflet\",\"bounds\":[[10.447298784079655,6.50115966796875],[13.408322332907831,11.090698242187498]],\"center\":\"[11.931852326960579, 8.795928955078125]\",\"zoom\":9,\"updated_at\":\"2015-09-16T16:20:36+00:00\",\"layers\":[{\"options\":{\"visible\":true,\"type\":\"Tiled\",\"name\":\"Nokia Reduced Day\",\"className\":\"httpssmapsnlpnokiacommaptile21maptilenewestreduceddayzxy256png8lgengtokena7tbpacepg9mj_zghvkt9qapp_idkuyppsdxzznpffjskt24\",\"base_type\":\"default\",\"urlTemplate\":\"https://{s}.maps.nlp.nokia.com/maptile/2.1/maptile/newest/reduced.day/{z}/{x}/{y}/256/png8?lg=eng&token=A7tBPacePg9Mj_zghvKt9Q&app_id=KuYppsdXZznpffJsKT24\",\"minZoom\":\"0\",\"maxZoom\":\"20\",\"attribution\":\"&copy;2015 HERE <a href=\\\"http://here.net/services/terms\\\" target=\\\"_blank\\\">Terms of use<\/a>\",\"subdomains\":\"1234\",\"style\":null,\"read_only\":true,\"category\":\"Here\",\"order\":0,\"id\":\"38998425-c502-48e6-a3ba-96df12b9bae6\",\"parent_id\":null},\"infowindow\":null,\"tooltip\":null,\"id\":\"38998425-c502-48e6-a3ba-96df12b9bae6\",\"order\":0,\"parent_id\":null,\"children\":[],\"type\":\"tiled\"},{\"type\":\"namedmap\",\"order\":1,\"options\":{\"type\":\"namedmap\",\"user_name\":\"topol\",\"maps_api_template\":\"https://{user}.cartodb.com:443\",\"sql_api_template\":\"https://{user}.cartodb.com:443\",\"tiler_protocol\":\"http\",\"tiler_domain\":\"cartodb.com\",\"tiler_port\":\"80\",\"filter\":\"mapnik\",\"named_map\":{\"name\":\"tpl_583a9cd0_0122_11e5_83f0_0e018d66dc29\",\"stat_tag\":\"583a9cd0-0122-11e5-83f0-0e018d66dc29\",\"params\":{\"layer0\":1,\"layer1\":0,\"layer2\":1},\"layers\":[{\"layer_name\":\"networks_existing\",\"interactivity\":\"cartodb_id\",\"visible\":true,\"legend\":{\"type\":\"custom\",\"show_title\":false,\"title\":\"\",\"template\":\"\",\"visible\":true,\"items\":[{\"name\":\"Existing Grid Lines\",\"visible\":true,\"value\":\"#000000\",\"sync\":true}]}},{\"layer_name\":\"Proposed Network\",\"interactivity\":\"cartodb_id\",\"visible\":false,\"legend\":{\"type\":\"custom\",\"show_title\":false,\"title\":\"Project Extension Stage\",\"template\":\"<div class=\'cartodb-legend custom\'>\\t\\n<ul>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background:#2167AB\\\"><\/div>\\n\\t\\tProposed Grid Path\\n\\t<\/li>\\n<\/ul>\\n<\/div>\\n\",\"visible\":true,\"items\":[{\"name\":\"Proposed Grid Path\",\"visible\":true,\"value\":\"#2167AB\",\"sync\":true}]}},{\"layer_name\":\"recommendedsolutions\",\"interactivity\":\"cartodb_id\",\"visible\":true,\"infowindow\":{\"fields\":[{\"name\":\"business_p\",\"title\":true,\"position\":2},{\"name\":\"connection\",\"title\":true,\"position\":3},{\"name\":\"is_urban\",\"title\":true,\"position\":10},{\"name\":\"pop\",\"title\":true,\"position\":15},{\"name\":\"sum_voters\",\"title\":true,\"position\":18}],\"template_name\":\"table/views/infowindow_light\",\"template\":\"<div class=\\\"cartodb-popup v2\\\">\\n  <a href=\\\"#close\\\" class=\\\"cartodb-popup-close-button close\\\">x<\/a>\\n  <div class=\\\"cartodb-popup-content-wrapper\\\">\\n    <div class=\\\"cartodb-popup-content\\\">\\n      {{#content.fields}}\\n        {{#title}}<h4>{{title}}<\/h4>{{/title}}\\n        {{#value}}\\n          <p {{#type}}class=\\\"{{ type }}\\\"{{/type}}>{{{ value }}}<\/p>\\n        {{/value}}\\n        {{^value}}\\n          <p class=\\\"empty\\\">null<\/p>\\n        {{/value}}\\n      {{/content.fields}}\\n    <\/div>\\n  <\/div>\\n  <div class=\\\"cartodb-popup-tip-container\\\"><\/div>\\n<\/div>\\n\",\"alternative_names\":{\"business_p\":\"Phase\",\"connection\":\"Connection Status\",\"is_urban\":\"Is Urban\",\"pop\":\"Population (EST)\",\"sum_voters\":\"Sum of Voters\"},\"width\":226,\"maxHeight\":180},\"legend\":{\"type\":\"category\",\"show_title\":true,\"title\":\"Phase\",\"template\":\"<div class=\'cartodb-legend category\'>\\t\\n<div class=\\\"legend-title\\\">Phase<\/div>\\n<ul>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #000000\\\"><\/div> Probabale Customer\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #bdbdbd\\\"><\/div> Probable Consumer\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #253494\\\"><\/div> 1\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #2c7fb8\\\"><\/div> 2\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #41b6c4\\\"><\/div> 3\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #a1dab4\\\"><\/div> 4\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #ffffcc\\\"><\/div> 5\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #810f7c\\\"><\/div> Non-Grid\\n\\t<\/li>\\n<\/ul>\\n<\/div>\",\"visible\":true,\"items\":[{\"name\":0,\"visible\":true,\"value\":\"#000000\"},{\"name\":0.5,\"visible\":true,\"value\":\"#bdbdbd\"},{\"name\":1,\"visible\":true,\"value\":\"#253494\"},{\"name\":2,\"visible\":true,\"value\":\"#2c7fb8\"},{\"name\":3,\"visible\":true,\"value\":\"#41b6c4\"},{\"name\":4,\"visible\":true,\"value\":\"#a1dab4\"},{\"name\":5,\"visible\":true,\"value\":\"#ffffcc\"},{\"name\":6,\"visible\":true,\"value\":\"#810f7c\"}]}}]},\"attribution\":\"\"}},{\"id\":\"cb180ada-fc98-49e4-be0a-0872f08fbd7c\",\"parent_id\":null,\"children\":[],\"type\":\"torque\",\"order\":4,\"legend\":{\"type\":\"none\",\"show_title\":false,\"title\":\"\",\"template\":\"\",\"visible\":true,\"items\":[{\"name\":1351,\"visible\":true,\"value\":\"#A6CEE3\"},{\"name\":1627,\"visible\":true,\"value\":\"#1F78B4\"},{\"name\":2291,\"visible\":true,\"value\":\"#B2DF8A\"},{\"name\":2678,\"visible\":true,\"value\":\"#33A02C\"},{\"name\":6706,\"visible\":true,\"value\":\"#FB9A99\"},{\"name\":7303,\"visible\":true,\"value\":\"#E31A1C\"},{\"name\":8411,\"visible\":true,\"value\":\"#FDBF6F\"},{\"name\":8514,\"visible\":true,\"value\":\"#FF7F00\"},{\"name\":8780,\"visible\":true,\"value\":\"#CAB2D6\"},{\"name\":9223370000000000000,\"visible\":true,\"value\":\"#6A3D9A\"},{\"name\":\"Others\",\"visible\":true,\"value\":\"#DDDDDD\"}]},\"options\":{\"stat_tag\":\"583a9cd0-0122-11e5-83f0-0e018d66dc29\",\"maps_api_template\":\"https://{user}.cartodb.com:443\",\"sql_api_template\":\"https://{user}.cartodb.com:443\",\"tiler_protocol\":\"http\",\"tiler_domain\":\"cartodb.com\",\"tiler_port\":\"80\",\"sql_api_protocol\":\"http\",\"sql_api_domain\":\"cartodb.com\",\"sql_api_endpoint\":\"/api/v2/sql\",\"sql_api_port\":80,\"layer_name\":\"Polling Units\",\"visible\":false,\"table_name\":\"customeraccounting_and_sequenced_results_by_mv\",\"user_name\":\"topol\",\"tile_style\":\"/** torque visualization */\\n\\nMap {\\n-torque-frame-count:256;\\n-torque-animation-duration:10;\\n-torque-time-attribute:\\\"sequence_far_sighted_sequence\\\";\\n-torque-aggregation-function:\\\"count(cartodb_id)\\\";\\n-torque-resolution:4;\\n-torque-data-aggregation:cumulative;\\n}\\n\\n#customeraccounting_and_sequenced_results_by_mv{\\n  comp-op: lighter;\\n  marker-fill-opacity: 0.1;\\n  marker-line-color: #FFF;\\n  marker-line-width: 0;\\n  marker-line-opacity: 1;\\n  marker-type: rectangle;\\n  marker-width: 1;\\n  marker-fill: #FF2900;\\n}\",\"named_map\":{\"name\":\"tpl_583a9cd0_0122_11e5_83f0_0e018d66dc29\",\"layer_index\":3,\"params\":{\"layer0\":1,\"layer1\":0,\"layer2\":1}}}}],\"overlays\":[{\"type\":\"text\",\"order\":1,\"options\":{\"x\":64,\"y\":44,\"device\":\"desktop\",\"display\":true,\"style\":{\"z-index\":4,\"color\":\"#ffffff\",\"text-align\":\"left\",\"font-size\":10,\"font-family-name\":\"Helvetica\",\"box-padding\":10,\"box-color\":\"#000000\",\"box-opacity\":0.7,\"box-width\":300},\"extra\":{\"pLeft\":\"50\",\"pTop\":\"50\",\"landscapeDirection\":\"left\",\"portraitDirection\":\"top\",\"text\":\"<!--[if gte mso 9]>\\n\\n  0\\n  0\\n  1\\n  17\\n  97\\n  Sustainable Engineering Lab\\n  1\\n  1\\n  113\\n  14.0\\n\\n<![endif]-->\\n\\n<!--[if gte mso 9]>\\n\\n  Normal\\n  0\\n\\n  false\\n  false\\n  false\\n\\n  EN-US\\n  JA\\n  X-NONE\\n\\n<![endif]--><!--[if gte mso 9]>\\n\\n<![endif]-->\\n\\n<!--[if gte mso 10]>\\n\\n /<em> Style Definitions <\/em>/\\ntable.MsoNormalTable\\n\\t{mso-style-name:&quot;Table Normal&quot;;\\n\\tmso-tstyle-rowband-size:0;\\n\\tmso-tstyle-colband-size:0;\\n\\tmso-style-noshow:yes;\\n\\tmso-style-priority:99;\\n\\tmso-style-parent:&quot;&quot;;\\n\\tmso-padding-alt:0in 5.4pt 0in 5.4pt;\\n\\tmso-para-margin-top:0in;\\n\\tmso-para-margin-right:0in;\\n\\tmso-para-margin-bottom:10.0pt;\\n\\tmso-para-margin-left:0in;\\n\\tline-height:115%;\\n\\tmso-pagination:widow-orphan;\\n\\tfont-size:11.0pt;\\n\\tfont-family:Calibri;\\n\\tmso-ascii-font-family:Calibri;\\n\\tmso-ascii-theme-font:minor-latin;\\n\\tmso-hansi-font-family:Calibri;\\n\\tmso-hansi-theme-font:minor-latin;}\\n\\n<![endif]-->\\n\\n<!--StartFragment-->KEDCO - An Electrification Roadmap: &nbsp;The resulting $2.7B access plan covers the\\nwhole of the KEDCO service area, combining grid and off-grid technologies. \\n\\n<!--EndFragment-->\",\"rendered_text\":\"<!--[if gte mso 9]>\\n\\n  0\\n  0\\n  1\\n  17\\n  97\\n  Sustainable Engineering Lab\\n  1\\n  1\\n  113\\n  14.0\\n\\n<![endif]-</emn\\n<!--[if gte mso 9]>\\n\\n  Normal\\n  0\\n\\n  false\\n  false\\n  false\\n\\n  EN-US\\n  JA\\n  X-NONE\\n\\n<![endif]--><!--[if gte mso 9]>\\n\\n<![endif]-->\\n\\n<!--[if gte mso 10]>\\n\\n /<em> Style Definitions <\/em>/\\ntable.MsoNormalTable\\n\\t{mso-style-name:&amp;quot;Table Normal&amp;quot;;\\n\\tmso-tstyle-rowband-size:0;\\n\\tmso-tstyle-colband-size:0;\\n\\tmso-style-noshow:yes;\\n\\tmso-style-priority:99;\\n\\tmso-style-parent:&amp;quot;&amp;quot;;\\n\\tmso-padding-alt:0in 5.4pt 0in 5.4pt;\\n\\tmso-para-margin-top:0in;\\n\\tmso-para-margin-right:0in;\\n\\tmso-para-margin-bottom:10.0pt;\\n\\tmso-para-margin-left:0in;\\n\\tline-height:115%;\\n\\tmso-pagination:widow-orphan;\\n\\tfont-size:11.0pt;\\n\\tfont-family:Calibri;\\n\\tmso-ascii-font-family:Calibri;\\n\\tmso-ascii-theme-font:minor-latin;\\n\\tmso-hansi-font-family:Calibri;\\n\\tmso-hansi-theme-font:minor-latin;}\\n\\n<![endif]-->\\n\\n<!--StartFragment-->KEDCO - An Electrification Roadmap:  The resulting $2.7B access plan covers the\\nwhole of the KEDCO service area, combining grid and off-grid technologies. \\n\\n<!--EndFragment-->\",\"default_position\":false,\"landscape_dominant_side\":\"left\",\"portrait_dominant_side\":\"top\",\"top_percentage\":6.304728546409807,\"left_percentage\":18.739054290718038,\"right_position\":778,\"bottom_position\":838,\"right\":1078,\"bottom\":894,\"width\":300,\"height\":56}},\"template\":null},{\"type\":\"header\",\"order\":1,\"options\":{\"display\":false,\"extra\":{\"title\":\"KEDCO - Electrification Roadmap\",\"description\":null,\"show_title\":true,\"show_description\":false}},\"template\":null},{\"type\":\"fullscreen\",\"order\":7,\"options\":{\"x\":20,\"y\":140,\"display\":true},\"template\":null},{\"type\":\"layer_selector\",\"order\":4,\"options\":{\"x\":60,\"y\":20,\"display\":true},\"template\":null},{\"type\":\"loader\",\"order\":8,\"options\":{\"display\":true,\"x\":20,\"y\":150},\"template\":\"<div class=\\\"loader\\\" original-title=\\\"\\\"><\/div>\"},{\"type\":\"zoom\",\"order\":6,\"options\":{\"display\":true,\"x\":20,\"y\":20},\"template\":\"<a href=\\\"#zoom_in\\\" class=\\\"zoom_in\\\">+<\/a> <a href=\\\"#zoom_out\\\" class=\\\"zoom_out\\\">-<\/a>\"},{\"type\":\"share\",\"order\":2,\"options\":{\"display\":true,\"x\":20,\"y\":20},\"template\":\"\"}],\"prev\":null,\"next\":null,\"transition_options\":{\"time\":0}}');
+    var login_url = "https://topol.cartodb.com/login";
 
-  // Manage errors
-  function manageError(err, layer) {
-    if(layer && layer.get('type') === 'torque') {
-      $('#not_supported_dialog').show();
-      // hide all the overlays
-      var overlays = this.getOverlays()
-      for (var i = 0; i < overlays.length; ++i) {
-        var o = overlays[i];
-        o.hide && o.hide();
-      }
-    }
-  }
-
-  // Send stats
-  function stats() {
-    var browser;
-    var ua = navigator.userAgent;
-    var checks = [
-        ['MSIE 11.0', 'ms11'],
-        ['MSIE 10.0', 'ms10'],
-        ['MSIE 9.0', 'ms9'],
-        ['MSIE 8.0', 'ms8'],
-        ['MSIE 7.0','ms7'],
-        ['Chrome', 'chr'],
-        ['Firefox', 'ff'],
-        ['Safari', 'ff']
-    ]
-    for(var i = 0; i < checks.length && !browser; ++i) {
-      if(ua.indexOf(checks[i][0]) !== -1) browser = checks[i][1];
-    }
-    browser = browser || 'none';
-    cartodb.core.Profiler.metric('cartodb-js.embed.' + browser).inc();
-  }
-
-  // On load...
-  $(function(){
-
+    // Generating map options
     var bool_fn = function(v) { return v == 'true' };
     var is_custom_install = false;
     var logo_fn  = function(v) { return ( false || is_custom_install ) ? true : v == 'true' };
     var layer_fn = function(v) {
-      if(!v || !v.length) {
-          return null;
+      if (!v || !v.length) {
+        return null;
       }
-
       return _.map(v.split("|"), function(v) {
         return { visible: !!parseInt(v, 10) }
       });
-
     };
 
-    var opt = get_url_params({
-      'force_mobile': bool_fn,
-      'search':       bool_fn,
-      'title':        bool_fn,
-      'description':  bool_fn,
-      'shareable':    bool_fn,
-      'fullscreen':   bool_fn,
-      'cartodb_logo': logo_fn,
-      'scrollwheel':  bool_fn,
+    var map_options = get_url_params({
+      'search':           bool_fn,
+      'title':            bool_fn,
+      'description':      bool_fn,
+      'shareable':        bool_fn,
+      'fullscreen':       bool_fn,
+      'cartodb_logo':     bool_fn,
+      'scrollwheel':      bool_fn,
       'sublayer_options': layer_fn,
-      'layer_selector': bool_fn,
-      'legends': bool_fn
+      'layer_selector':   bool_fn,
+      'legends':          bool_fn
     });
 
 
 
-      opt.cartodb_logo = false;
+    // Description and title should be hidden
+    // because we already have that info
+    map_options.description = false;
+    map_options.title = false;
+    // Logo MUST be hidden in this view
+    map_options.cartodb_logo  = false;
+    // Fullscreen button should be hidden
+    // because we already have a full page button
+    map_options.fullscreen    = false;
+    map_options.scrollwheel   = false;
+    map_options.mobile_layout = true;
 
-    opt.mobile_layout = true;
+  </script>
 
-    cartodb.config.set({
-      cartodb_attributions: "CartoDB <a href='http://cartodb.com/attributions?utm_source=Footer_Link&utm_medium=referral&utm_campaign=Embed_v1&utm_content=Attributions&utm_term=topol' target='_blank'>attribution</a>",
-      cartodb_logo_link: "http://www.cartodb.com?utm_source=Footer_Link&utm_medium=referral&utm_campaign=Embed_v1&utm_content=Logo"
-    })
-
-    var loadingTime  = cartodb.core.Profiler.metric('cartodb-js.embed.time_full_loaded').start();
-    var visReadyTime = cartodb.core.Profiler.metric('cartodb-js.embed.time_vis_loaded').start();
-    cartodb.createVis('map', JSON.parse('{\"id\":\"583a9cd0-0122-11e5-83f0-0e018d66dc29\",\"version\":\"0.1.0\",\"title\":\"KEDCO - Electrification Roadmap\",\"likes\":0,\"description\":null,\"scrollwheel\":true,\"legends\":true,\"url\":null,\"map_provider\":\"leaflet\",\"bounds\":[[10.568822151626955,6.185302734375],[13.207860470525487,11.2939453125]],\"center\":\"[11.89154073503375, 8.7396240234375]\",\"zoom\":8,\"updated_at\":\"2015-06-11T15:53:18+00:00\",\"layers\":[{\"options\":{\"id\":\"38998425-c502-48e6-a3ba-96df12b9bae6\",\"order\":0,\"visible\":true,\"type\":\"Tiled\",\"name\":\"Nokia Day Grey\",\"className\":\"nokia_day_grey\",\"base_type\":\"default\",\"urlTemplate\":\"https://{s}.maps.nlp.nokia.com/maptile/2.1/maptile/newest/normal.day.grey/{z}/{x}/{y}/256/png8?lg=eng&token=A7tBPacePg9Mj_zghvKt9Q&app_id=KuYppsdXZznpffJsKT24\",\"read_only\":true,\"minZoom\":\"0\",\"maxZoom\":\"20\",\"attribution\":\"\\u00a92015 HERE <a href=\\\"http://here.net/services/terms\\\" target=\\\"_blank\\\">Terms of use<\/a>\",\"subdomains\":\"1234\",\"style\":null,\"category\":\"Here\"},\"infowindow\":null,\"tooltip\":null,\"id\":\"38998425-c502-48e6-a3ba-96df12b9bae6\",\"order\":0,\"parent_id\":null,\"children\":[],\"type\":\"tiled\"},{\"type\":\"namedmap\",\"order\":1,\"options\":{\"type\":\"namedmap\",\"user_name\":\"topol\",\"maps_api_template\":\"https://{user}.cartodb.com:443\",\"sql_api_template\":\"https://{user}.cartodb.com:443\",\"tiler_protocol\":\"http\",\"tiler_domain\":\"cartodb.com\",\"tiler_port\":\"80\",\"cdn_url\":{\"http\":\"api.cartocdn.com\",\"https\":\"cartocdn.global.ssl.fastly.net\"},\"dynamic_cdn\":false,\"named_map\":{\"name\":\"tpl_583a9cd0_0122_11e5_83f0_0e018d66dc29\",\"stat_tag\":\"583a9cd0-0122-11e5-83f0-0e018d66dc29\",\"params\":{\"layer0\":1,\"layer1\":1,\"layer2\":0,\"layer3\":1},\"layers\":[{\"layer_name\":\"networks_existing\",\"interactivity\":\"cartodb_id\",\"visible\":true,\"legend\":{\"type\":\"custom\",\"show_title\":false,\"title\":\"\",\"template\":\"\",\"visible\":true,\"items\":[{\"name\":\"Existing Grid Lines\",\"visible\":true,\"value\":\"#000000\",\"sync\":true}]}},{\"layer_name\":\"Proposed Network\",\"interactivity\":\"cartodb_id\",\"visible\":true,\"legend\":{\"type\":\"custom\",\"show_title\":false,\"title\":\"Project Extension Stage\",\"template\":\"<div class=\'cartodb-legend custom\'>\\t\\n<ul>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background:#2167AB\\\"><\/div>\\n\\t\\tProposed Grid Path\\n\\t<\/li>\\n<\/ul>\\n<\/div>\\n\",\"visible\":true,\"items\":[{\"name\":\"Proposed Grid Path\",\"visible\":true,\"value\":\"#2167AB\",\"sync\":true}]}},{\"layer_name\":\"customeraccounting_and_sequenced_results_by_mv\",\"interactivity\":\"cartodb_id\",\"visible\":false,\"infowindow\":{\"fields\":[{\"position\":1.7976931348623157e+308,\"name\":\"average_of_distance_to_xfrmr\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"business_phase_hh\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"business_phase_mv\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"connection_status\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"cummulative_hholds\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"cummulative_mv\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"demand_household_target_household_count\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"demand_projected_nodal_demand_per_year\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"f500m_cluster_parent_puid\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"gr_mv_ln_cst_pr_m\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"is_urban\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"metric_system\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"parent_pui\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"percent_hhs\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"percent_mv\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"pop\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"sequence_far_sighted_sequence\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"sequence_upstream_segment_distance_m\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"sum_voters\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"system_grid_installation_cost\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"system_grid_medium_voltage_line_cost_per_meter\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"x\",\"title\":true},{\"position\":1.7976931348623157e+308,\"name\":\"y\",\"title\":true}],\"template_name\":\"\",\"template\":\"<div class=\\\"cartodb-popup v2\\\">\\n  <a href=\\\"#close\\\" class=\\\"cartodb-popup-close-button close\\\">x<\/a>\\n  <div class=\\\"cartodb-popup-content-wrapper\\\">\\n    <div class=\\\"cartodb-popup-content\\\">\\n      <h4>average_of_distance_to_xfrmr<\/h4>\\n      <p>{{average_of_distance_to_xfrmr}}<\/p>\\n      <h4>business_phase<\/h4>\\n      <p>{{business_phase}}<\/p>\\n      <h4>connection_status<\/h4>\\n      <p>{{connection_status}}<\/p>\\n      <h4>cummulative_hholds<\/h4>\\n      <p>{{cummulative_hholds}}<\/p>\\n      <h4>Projected Demand per Year<\/h4>\\n      <p>{{demand_projected_nodal_demand_per_year}}<\/p>\\n      <h4>pop<\/h4>\\n      <p>{{pop}}<\/p>\\n      <h4>sum_voters<\/h4>\\n      <p>{{sum_voters}}<\/p>\\n      <h4>system_grid_installation_cost<\/h4>\\n      <p>{{system_grid_installation_cost}}<\/p>\\n    <\/div>\\n  <\/div>\\n  <div class=\\\"cartodb-popup-tip-container\\\"><\/div>\\n<\/div>\",\"alternative_names\":{},\"width\":226,\"maxHeight\":180},\"legend\":{\"type\":\"category\",\"show_title\":false,\"title\":\"\",\"template\":\"<div class=\'cartodb-legend category\'>\\t\\n<div class=\\\"legend-title\\\">Proposed Phase<\/div>\\n\\n\\n<ul>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #000000\\\"><\/div> Likely Customers (400k)\\n\\t\\n\\t<\/li>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #bdbdbd\\\"><\/div> Likely Consumers (2km)\\n\\t\\n\\t<\/li>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #F84F40\\\"><\/div> 1\\n\\t\\n\\t<\/li>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #FFA300\\\"><\/div> 2\\n\\t\\n\\t<\/li>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #FFCC00\\\"><\/div> 3\\n\\t\\n\\t<\/li>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #229A00\\\"><\/div> 4\\n\\t\\n\\t<\/li>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #0F3B82\\\"><\/div> 5\\n\\t\\n\\t<\/li>\\n\\t\\n\\t<li>\\n\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #A53ED5\\\"><\/div> Non-Grid\\n\\t\\n\\t<\/li>\\n\\n<\/ul>\\n\\n<\/div>\",\"visible\":true,\"items\":[{\"name\":0,\"visible\":true,\"value\":\"#000000\"},{\"name\":0.5,\"visible\":true,\"value\":\"#000000\"},{\"name\":1,\"visible\":true,\"value\":\"#FF2900\"},{\"name\":2,\"visible\":true,\"value\":\"#FF5C00\"},{\"name\":3,\"visible\":true,\"value\":\"#FFCC00\"},{\"name\":4,\"visible\":true,\"value\":\"#229A00\"},{\"name\":5,\"visible\":true,\"value\":\"#2167AB\"},{\"name\":6,\"visible\":true,\"value\":\"#A53ED5\"}]}},{\"layer_name\":\"recommendedsolutions\",\"interactivity\":\"cartodb_id\",\"visible\":true,\"infowindow\":{\"fields\":[{\"name\":\"demand_ho\",\"title\":true,\"position\":6},{\"name\":\"parent_pui\",\"title\":true,\"position\":12},{\"name\":\"pop\",\"title\":true,\"position\":15},{\"name\":\"sum_voters\",\"title\":true,\"position\":18}],\"template_name\":\"table/views/infowindow_light\",\"template\":\"<div class=\\\"cartodb-popup v2\\\">\\n  <a href=\\\"#close\\\" class=\\\"cartodb-popup-close-button close\\\">x<\/a>\\n  <div class=\\\"cartodb-popup-content-wrapper\\\">\\n    <div class=\\\"cartodb-popup-content\\\">\\n      {{#content.fields}}\\n        {{#title}}<h4>{{title}}<\/h4>{{/title}}\\n        {{#value}}\\n          <p {{#type}}class=\\\"{{ type }}\\\"{{/type}}>{{{ value }}}<\/p>\\n        {{/value}}\\n        {{^value}}\\n          <p class=\\\"empty\\\">null<\/p>\\n        {{/value}}\\n      {{/content.fields}}\\n    <\/div>\\n  <\/div>\\n  <div class=\\\"cartodb-popup-tip-container\\\"><\/div>\\n<\/div>\\n\",\"alternative_names\":{\"parent_pui\":\"PU ID\",\"pop\":\"Population\",\"sum_voters\":\"INEC 2011 Voters\",\"demand_ho\":\"Households (est.)\"},\"width\":226,\"maxHeight\":180},\"legend\":{\"type\":\"category\",\"show_title\":true,\"title\":\"Phase\",\"template\":\"<div class=\'cartodb-legend category\'>\\t\\n<div class=\\\"legend-title\\\">Phase<\/div>\\n<ul>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #000000\\\"><\/div> Probable Customers\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #bdbdbd\\\"><\/div> Probable Consumers\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #d7191c\\\"><\/div> Stage 1 Extension\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #fdae61\\\"><\/div> Stage 2 Extension\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #ffffbf\\\"><\/div> Stage 3 Extension\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #abdda4\\\"><\/div> Stage 4 Extension\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #2b83ba\\\"><\/div> Stage 5 Extension\\n\\t<\/li>\\n\\t<li>\\n\\t\\t<div class=\\\"bullet\\\" style=\\\"background: #b2abd2\\\"><\/div> Non-grid Areas\\n\\t<\/li>\\n<\/ul>\\n<\/div>\",\"visible\":true,\"items\":[{\"name\":0,\"visible\":true,\"value\":\"#000000\"},{\"name\":0.5,\"visible\":true,\"value\":\"#bdbdbd\"},{\"name\":1,\"visible\":true,\"value\":\"#d7191c\"},{\"name\":2,\"visible\":true,\"value\":\"#fdae61\"},{\"name\":3,\"visible\":true,\"value\":\"#ffffbf\"},{\"name\":4,\"visible\":true,\"value\":\"#abdda4\"},{\"name\":5,\"visible\":true,\"value\":\"#2b83ba\"},{\"name\":6,\"visible\":true,\"value\":\"#b2abd2\"}]}}]}}}],\"overlays\":[{\"type\":\"layer_selector\",\"order\":4,\"options\":{\"x\":60,\"y\":20,\"display\":true},\"template\":null},{\"type\":\"loader\",\"order\":8,\"options\":{\"display\":true,\"x\":20,\"y\":150},\"template\":\"<div class=\\\"loader\\\" original-title=\\\"\\\"><\/div>\"},{\"type\":\"zoom\",\"order\":6,\"options\":{\"display\":true,\"x\":20,\"y\":20},\"template\":\"<a href=\\\"#zoom_in\\\" class=\\\"zoom_in\\\">+<\/a> <a href=\\\"#zoom_out\\\" class=\\\"zoom_out\\\">-<\/a>\"},{\"type\":\"share\",\"order\":2,\"options\":{\"display\":true,\"x\":20,\"y\":20},\"template\":\"\"}],\"prev\":null,\"next\":null,\"transition_options\":{\"time\":0}}'), opt, function(vis) {
-      visReadyTime.end();
-      vis.on('load', function() {
-        loadingTime.end();
-      });
-
-      var like = new cdb.open.LikeView({ 
-        el: $(".js-like"),
-        auto_fetch: false,
-        model: new cdb.open.Like({ vis_id: "583a9cd0-0122-11e5-83f0-0e018d66dc29", likes: 0 })
-      });
-
-      window.vis = vis;
-
-      // fixes default position of the overlays
-      setTimeout(function() {
-        $(window).trigger("map_resized");
-      }, 400);
-      // some stats
-      stats();
-    }).on('error', manageError);
-  });
-
-  //<!-- load stats -->
-    if (location.protocol.indexOf('https') === -1) {
-      jQuery.getScript('//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.13.23/javascripts/statsc.js', function(ready) {
-        statsc.connect('http://s.cartodb.net:80/');
-        cartodb.core.Profiler.backend(function () {
-          statsc.send.apply(statsc, arguments);
-        })
-        // stop sending stats after 11 seconds
-        // statsc send stats in 5 secs interval so allow to send at least twice
-        setTimeout(function() {
-          cartodb.core.Profiler.backend(null);
-        }, 11*1000);
-      })
-    }
-
-</script>
+  <script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/javascripts/cdb.js" type="text/javascript"></script>
+<script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/javascripts/templates.js" type="text/javascript"></script>
+<script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/javascripts/public_map_deps.js" type="text/javascript"></script>
+<script src="//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/javascripts/public_map.js" type="text/javascript"></script>
 
   <script>
-    window._trackJs = {
-      enabled: true,
-      application: 'vzeuvy3koiv3xsukyffu'
-    };
+
+    $(function() {
+        if (location.protocol.indexOf('https') === -1) {
+          jQuery.getScript('//cartodb-libs.global.ssl.fastly.net/cartodbui/assets/3.19.30/javascripts/statsc.js', function(ready) {
+            statsc.connect('http://s.cartodb.net:80/');
+            cartodb.core.Profiler.backend(function () {
+              statsc.send.apply(statsc, arguments);
+            })
+            // stop sending stats after 11 seconds
+            // statsc send stats in 5 secs interval so allow to send at least twice
+            setTimeout(function() {
+              cartodb.core.Profiler.backend(null);
+            }, 11*1000);
+          })
+        }
+    });
+
   </script>
-  <script type="text/javascript" src="//d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js" data-token="cf7a7cd8411140689ea94e92d9fba842"></script>
+
+  <script>
+  window._trackJs = {
+    enabled: true,
+    application: 'axgsvrstp9apevrxuzzghfj7p'
+  };
+</script>
+<script type="text/javascript" src="//d2zah9y47r7bi2.cloudfront.net/releases/current/tracker.js" data-token="cf7a7cd8411140689ea94e92d9fba842"></script>
 
 
-    <script type="text/javascript">
-      var _gaq = _gaq || []; 
-      _gaq.push(['_setAccount', 'UA-20934186-10']);
-      _gaq.push(['_setDomainName', 'cartodb.com']);
-      _gaq.push(['_setAllowLinker', true]);
-      _gaq.push(['_trackPageview']);
+  <script type="text/javascript">
+  var _gaq = _gaq || []; 
+  _gaq.push(['_setAccount', 'UA-20934186-3']);
+  _gaq.push(['_setDomainName', 'cartodb.com']);
+  _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_setCustomVar', 1, 'Public Pages', 'Other', 3 ]);
+  _gaq.push(['_trackPageview']);
 
-      (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
-    </script>
+  (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
 
+
+  <script type="text/javascript">
+  var hubspot_token = "474999";
+  var hubspot_ids = {"import_failed":"000000273115","geocoding_failed":"000000273116","import_success":"000000273111","geocoding_success":"000000273112","published_visualization":"000000265950","visited_dashboard":"000000244136","connect_dataset":"000000266348","create_map":"000000266346","export_table":"000000265956","select_wms":"000000266068","color_basemap":"000000265932","pattern_basemap":"000000265935","geocoding":"000000266362","visual_merge":"000000266065","common_data":"000000274043","cartocss_manually":"000000265922","wizard":"000000265942","filter":"000000265936","query":"000000265962","logged_in":"000000266355","visited_dashboard_first_time":"000000266350","applied_pecan":"000000318909","open_pecan_list":"000000318911"};
+
+  (function(d,s,i,r) {
+    if (d.getElementById(i)){return;}
+    var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+    n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/'+hubspot_token+'.js';
+    e.parentNode.insertBefore(n, e);
+  })(document,"script","hs-analytics",300000);
+</script>
 
 
   </body>
